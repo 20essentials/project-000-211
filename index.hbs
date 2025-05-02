@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Snap</title>
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  </head>
+
+  <body>
+    <script id="template" type="text/x-handlebars-template">
+      <div class="slider">
+        {{#each images}}
+          <img {{#if @first}}tabindex="0"{{/if}} src="{{src}}" alt="{{alt}}" />
+        {{/each}}
+      </div>
+      <img class="keyboard" src="led-home-decore/keyboards.webp" alt="keyboards" />
+    </script>
+
+    <script>
+      const templateSource = document.getElementById("template").innerHTML;
+      const template = Handlebars.compile(templateSource);
+      const images = Array.from({ length: 10 }, (_, i) => ({
+        src: `led-home-decore/img-${i + 1}.webp`,
+        alt: `image-${i + 1}`
+      }));
+      const html = template({ images });
+      document.body.innerHTML = html;
+
+      setTimeout(() => {
+        const slider = document.querySelector('.slider');
+        const firstImg = slider.firstElementChild;
+        firstImg.focus();
+      }, 20);
+    </script>
+  </body>
+</html>
