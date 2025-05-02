@@ -11,7 +11,7 @@
 
   <body>
     <div class="slider">
-      <img src="led-home-decore/img-1.webp" alt="image-1" />
+      <img tabindex="0" src="led-home-decore/img-1.webp" alt="image-1" />
       <img src="led-home-decore/img-2.webp" alt="image-2" />
       <img src="led-home-decore/img-3.webp" alt="image-3" />
       <img src="led-home-decore/img-4.webp" alt="image-4" />
@@ -23,6 +23,14 @@
       <img src="led-home-decore/img-10.webp" alt="image-10" />
     </div>
 
-    <img class="keyboard" src="assets/keyboards.webp" alt="keyboards">
+    <script>
+      setTimeout(() => {
+        const slider = document.querySelector('.slider');
+        const firstImg = slider.firstElementChild;
+        firstImg.focus();
+      }, 20);
+    </script>
+
+    <img class="keyboard" src="led-home-decore/keyboards.webp" alt="keyboards" />
   </body>
 </html>

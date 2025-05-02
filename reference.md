@@ -1,2 +1,0 @@
-- **Reference ⬇️**
-  - [MIDUDEV VIDEO](https://youtu.be/uhP6OL0bwpY?si=2QTC87l70xCUX9wg)
